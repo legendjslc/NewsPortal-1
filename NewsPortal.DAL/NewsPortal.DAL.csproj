@@ -54,12 +54,14 @@
     <Compile Include="Entities\News.cs" />
     <Compile Include="Entities\Role.cs" />
     <Compile Include="Entities\User.cs" />
+    <Compile Include="Interfaces\IDALUnitOfWork.cs" />
     <Compile Include="Migrations\201608111834419_initDB.cs" />
     <Compile Include="Migrations\201608111834419_initDB.Designer.cs">
       <DependentUpon>201608111834419_initDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\EfUnitOfWork.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

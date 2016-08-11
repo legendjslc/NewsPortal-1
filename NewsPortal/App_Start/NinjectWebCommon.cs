@@ -10,6 +10,8 @@ namespace NewsPortal.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using Ninject.Modules;
+    using BL.Infrastructure;
 
     public static class NinjectWebCommon 
     {
@@ -39,6 +41,9 @@ namespace NewsPortal.App_Start
         /// <returns>The created kernel.</returns>
         private static IKernel CreateKernel()
         {
+            var modules = new INinjectModule[] {
+                new ServicesNinjectModule("NewsPortalContext")
+            };
             var kernel = new StandardKernel();
             try
             {
@@ -61,6 +66,7 @@ namespace NewsPortal.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
+            System.Web.Mvc.DependencyResolver.SetResolver(new Util.NinjectDependencyResolver(kernel));
         }        
     }
 }
