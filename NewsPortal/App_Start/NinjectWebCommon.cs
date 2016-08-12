@@ -1,3 +1,5 @@
+using Ninject.Web.Mvc;
+
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(NewsPortal.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(NewsPortal.App_Start.NinjectWebCommon), "Stop")]
 
@@ -66,7 +68,7 @@ namespace NewsPortal.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            System.Web.Mvc.DependencyResolver.SetResolver(new Util.NinjectDependencyResolver(kernel));
+            System.Web.Mvc.DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
         }        
     }
 }
