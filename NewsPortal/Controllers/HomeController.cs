@@ -28,9 +28,10 @@ namespace NewsPortal.Controllers
 
         public JsonResult GetNews()
         {
+            var news = Logic.NewsService.GetNews();
             return Json(new
             {
-                news = Logic.NewsService.GetNews()
+                news = news
             }, JsonRequestBehavior.AllowGet);
         }
     }

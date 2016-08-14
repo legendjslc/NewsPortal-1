@@ -1,9 +1,10 @@
 ﻿<script src="/CustomScripts/NewsViewModel.js"></script>
-<div id="news">
+<div id="news" data-bind="foreach: News">
 	<div id="head">
-	<h3><span data-bind=""></span></h3>
+	<h3 data-bind="text: Name"></h3>
 	</div>
 	<div id="content">
+	<p data-bind="text: Content"></p>
 	</div>
 </div>
 <script type="text/javascript">
