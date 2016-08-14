@@ -1,4 +1,5 @@
-﻿using NewsPortal.BL.DTO;
+﻿using System;
+using NewsPortal.BL.DTO;
 
 namespace NewsPortal.BL.Interfaces
 {
@@ -7,5 +8,6 @@ namespace NewsPortal.BL.Interfaces
         UserDTO CreateUser(UserDTO user);
         UserDTO EditUser(UserDTO user);
         bool DeleteUser(UserDTO user);
+        UserDTO GetUser(Guid id);
     }
 }

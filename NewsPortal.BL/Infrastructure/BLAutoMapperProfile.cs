@@ -13,7 +13,7 @@ namespace NewsPortal.BL.Infrastructure
             {
                 CreateMap<Comment, CommentDTO>().ForMember(dest => dest.UserName, opt => opt.MapFrom(src => src.User.Name)).IgnoreAllNonExisting();
                 CreateMap<CommentDTO, Comment>().IgnoreAllNonExisting();
-                CreateMap<News, NewsDTO>().ForMember(dest => dest.AuthorName, opt => opt.MapFrom(src => src.Author.Name)).IgnoreAllNonExisting();
+                CreateMap<News, NewsDTO>().ForMember(dest => dest.AuthorId, opt => opt.MapFrom(src => src.Author.Id)).IgnoreAllNonExisting();
                 CreateMap<NewsDTO, News>().IgnoreAllNonExisting();
                 CreateMap<Role, RoleDTO>().IgnoreAllNonExisting();
                 CreateMap<RoleDTO, Role>().IgnoreAllNonExisting();

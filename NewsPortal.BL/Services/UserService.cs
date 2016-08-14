@@ -1,4 +1,6 @@
-﻿using NewsPortal.BL.DTO;
+﻿using System;
+using AutoMapper;
+using NewsPortal.BL.DTO;
 using NewsPortal.BL.Interfaces;
 using NewsPortal.DAL.Interfaces;
 
@@ -23,6 +25,11 @@ namespace NewsPortal.BL.Services
         public bool DeleteUser(UserDTO user)
         {
             throw new System.NotImplementedException();
+        }
+
+        public UserDTO GetUser(Guid id)
+        {
+            return Mapper.Map<UserDTO>(Database.UserRepository.Get(id));
         }
     }
 }

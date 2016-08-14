@@ -8,7 +8,7 @@ namespace NewsPortal.BL.DTO
         public Guid Id { get; set; }
         public string Name { get; set; }
         public string Content { get; set; }
-        public string AuthorName { get; set; }
+        public Guid AuthorId { get; set; }
         public DateTime CreateTime { get; set; }
         public DateTime EditTime { get; set; }
     }

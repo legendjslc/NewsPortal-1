@@ -1,10 +1,33 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>Home page</title>
-	<meta charset="utf-8" />
-</head>
+    <title>News portal</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+	<script type="text/javascript" src="/CustomScripts/index.js"></script>
+	
 <body>
-
+	<nav id="mainBarViewModel" role="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div id="menu">
+			<div class="navbar-header">
+				<a class="navbar-brand">News portal</a>
+			</div>
+		</div>
+	</nav>
+	<div id="pageContainer" class="container">
+	</div>
 </body>
 </html>
+
+<script type="text/javascript">
+	function windowSize() {
+        var heightMenu = $('#mainBarViewModel').height();
+        $('#pageContainer').css('padding-top', heightMenu);
+    }
+    $(window).load(windowSize); 
+    $(window).resize(windowSize); 
+
+    $(window).on('load resize', windowSize);
+</script>

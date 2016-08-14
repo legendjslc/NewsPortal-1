@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Messaging;
-using System.Web;
 using System.Web.Mvc;
 using NewsPortal.BL.Interfaces;
 
@@ -16,12 +12,25 @@ namespace NewsPortal.Controllers
         {
             Logic = uowBL;
         }
-        public JsonResult Index()
+        public ActionResult Index()
         {
-            var result = Logic.NewsService.GetNews();
+            return Redirect("/index.html");
+        }
+
+        public JsonResult GetUser(Guid id)
+        {
+            var user = Logic.UserService.GetUser(id);
             return Json(new
             {
-                roles = result
+                user = user
+            }, JsonRequestBehavior.AllowGet);
+        }
+
+        public JsonResult GetNews()
+        {
+            return Json(new
+            {
+                news = Logic.NewsService.GetNews()
             }, JsonRequestBehavior.AllowGet);
         }
     }
