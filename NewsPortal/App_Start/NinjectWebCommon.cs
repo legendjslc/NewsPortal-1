@@ -46,7 +46,7 @@ namespace NewsPortal.App_Start
             var modules = new INinjectModule[] {
                 new ServicesNinjectModule("NewsPortalContext")
             };
-            var kernel = new StandardKernel();
+            var kernel = new StandardKernel(modules);
             try
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
@@ -68,7 +68,7 @@ namespace NewsPortal.App_Start
         /// <param name="kernel">The kernel.</param>
         private static void RegisterServices(IKernel kernel)
         {
-            System.Web.Mvc.DependencyResolver.SetResolver(new NinjectDependencyResolver(kernel));
+            System.Web.Mvc.DependencyResolver.SetResolver(new Util.NinjectDependencyResolver(kernel));
         }        
     }
 }

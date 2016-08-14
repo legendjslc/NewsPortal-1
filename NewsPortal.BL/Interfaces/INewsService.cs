@@ -1,4 +1,5 @@
-﻿using NewsPortal.BL.DTO;
+﻿using System.Collections.Generic;
+using NewsPortal.BL.DTO;
 
 namespace NewsPortal.BL.Interfaces
 {
@@ -7,5 +8,6 @@ namespace NewsPortal.BL.Interfaces
         NewsDTO CreateNews(NewsDTO news);
         NewsDTO EditNews(NewsDTO news);
         bool DeleteNews(NewsDTO news);
+        IEnumerable<NewsDTO> GetNews();
     }
 }

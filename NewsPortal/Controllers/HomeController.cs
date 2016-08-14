@@ -16,9 +16,13 @@ namespace NewsPortal.Controllers
         {
             Logic = uowBL;
         }
-        public void Index()
+        public JsonResult Index()
         {
-
+            var result = Logic.NewsService.GetNews();
+            return Json(new
+            {
+                roles = result
+            }, JsonRequestBehavior.AllowGet);
         }
     }
 }

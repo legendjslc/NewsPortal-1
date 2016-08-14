@@ -60,6 +60,14 @@
     <Compile Include="Migrations\201608111834419_initDB.Designer.cs">
       <DependentUpon>201608111834419_initDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608140727325_edited_foreign_keys.cs" />
+    <Compile Include="Migrations\201608140727325_edited_foreign_keys.Designer.cs">
+      <DependentUpon>201608140727325_edited_foreign_keys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608140732000_added_news_link_to_comment.cs" />
+    <Compile Include="Migrations\201608140732000_added_news_link_to_comment.Designer.cs">
+      <DependentUpon>201608140732000_added_news_link_to_comment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\EfUnitOfWork.cs" />
@@ -72,6 +80,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201608111834419_initDB.resx">
       <DependentUpon>201608111834419_initDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608140727325_edited_foreign_keys.resx">
+      <DependentUpon>201608140727325_edited_foreign_keys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608140732000_added_news_link_to_comment.resx">
+      <DependentUpon>201608140732000_added_news_link_to_comment.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

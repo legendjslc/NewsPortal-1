@@ -1,4 +1,6 @@
-﻿using NewsPortal.BL.DTO;
+﻿using System.Collections.Generic;
+using AutoMapper;
+using NewsPortal.BL.DTO;
 using NewsPortal.BL.Interfaces;
 using NewsPortal.DAL.Interfaces;
 
@@ -23,6 +25,12 @@ namespace NewsPortal.BL.Services
         public bool DeleteNews(NewsDTO news)
         {
             throw new System.NotImplementedException();
+        }
+
+        public IEnumerable<NewsDTO> GetNews()
+        {
+            var news = Database.NewsRepository.All();
+            return Mapper.Map<IEnumerable<NewsDTO>>(news);
         }
     }
 }

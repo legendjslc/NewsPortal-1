@@ -14,5 +14,18 @@ namespace NewsPortal.DAL.EF
         public DbSet<News> News { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
+
+        public NewsPortalContext()
+        {
+            Database.SetInitializer(new NewsPortalDbInitializer());
+        }
+    }
+
+    public class NewsPortalDbInitializer : CreateDatabaseIfNotExists<NewsPortalContext>
+    {
+        protected override void Seed(NewsPortalContext db)
+        {
+            
+        }
     }
 }

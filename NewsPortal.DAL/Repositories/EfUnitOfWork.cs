@@ -15,6 +15,11 @@ namespace NewsPortal.DAL.Repositories
         private IRepository<Role> _roleRepository;
         private IRepository<User> _userRepository;
 
+        public EfUnitOfWork()
+        {
+            _db = new NewsPortalContext();
+        }
+
         public IRepository<Comment> CommentRepository
         {
             get { return _commentRepository ?? (_commentRepository = new Repository<Comment>(_db)); }

@@ -21,7 +21,8 @@ namespace NewsPortal.DAL.Entities
         public string Name { get; set; }
         [Required]
         public string Email { get; set; }
-        [ForeignKey("Id")]
+        public Guid RoleId { get; set; }
+        [ForeignKey("RoleId")]
         public virtual Role Role { get; set; }
 
     }

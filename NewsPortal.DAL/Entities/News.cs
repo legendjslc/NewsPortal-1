@@ -14,8 +14,9 @@ namespace NewsPortal.DAL.Entities
         public string Name { get; set; }
         [Required]
         public string Content { get; set; }
-        [ForeignKey("Id")]
-        public User Author { get; set; }
+        public Guid UserId { get; set; }
+        [ForeignKey("UserId")]
+        public virtual User Author { get; set; }
         [Required]
         public DateTime CreateTime { get; set; }
         public DateTime EditTime { get; set; }

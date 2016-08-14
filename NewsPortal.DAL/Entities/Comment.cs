@@ -9,11 +9,15 @@ namespace NewsPortal.DAL.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public Guid Id { get; set; }
-        [ForeignKey("Id")]
+        public Guid UserId { get; set; }
+        [ForeignKey("UserId")]
         public virtual User User { get; set; }
         [Required]
         public string Text { get; set; }
         [Required]
         public DateTime CommentTime { get; set; }
+        public Guid NewsId { get; set; }
+        [ForeignKey("NewsId")]
+        public virtual News News { get; set; }
     }
 }
