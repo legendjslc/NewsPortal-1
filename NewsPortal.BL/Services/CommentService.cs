@@ -1,4 +1,8 @@
-﻿using NewsPortal.BL.DTO;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using AutoMapper;
+using NewsPortal.BL.DTO;
 using NewsPortal.BL.Interfaces;
 using NewsPortal.DAL.Interfaces;
 
@@ -23,6 +27,12 @@ namespace NewsPortal.BL.Services
         public bool DeleteComment(CommentDTO comment)
         {
             throw new System.NotImplementedException();
+        }
+
+        public IEnumerable<CommentDTO> GetCommentsForNews(Guid newsId)
+        {
+            var comments = Database.CommentRepository.All().Where(com => com.NewsId == newsId);
+            return Mapper.Map<IEnumerable<CommentDTO>>(comments);
         }
     }
 }

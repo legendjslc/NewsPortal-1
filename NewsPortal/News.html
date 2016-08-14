@@ -1,9 +1,9 @@
 ﻿<script src="/CustomScripts/NewsViewModel.js"></script>
 <script src="/CustomScripts/popup.js"></script>
 <link rel="stylesheet" type="text/css" href="/css/popup.css">
-<div id="news" data-bind="foreach: News, click: function() {console.log(self)}">
+<div id="news" data-bind="foreach: News">
 	<div id="head">
-	<h3 data-bind="text: Name"></h3>
+	<h3 id="popup-link-1" data-bind="text: Name, click: function() {$parent.GetComments($data.Id())}"></h3>
 	</div>
 	<div id="content">
 	<p data-bind="text: Content"></p>
@@ -12,16 +12,20 @@
 <div class="popup-box" id="popup-box-1">
 	<div class="close">X</div>
     <div class="top">
-        <h2>Edit student:</h2>
+        <h2>Comments for news:</h2>
     </div>
     <div class="bottom">
     	<div class="comment" data-bind="foreach: Comments">
-    	
+    		<div class="commentContent">
+    			<h5 data-bind="text: UserName"></h5>
+    			<p data-bind="text: Text"></p>
+    		</div>
     	</div>
     </div>
 </div>
 <script type="text/javascript">
 	$(document).ready(function(){
-		ko.applyBindings(new NewsViewModel(), $("#pageContainer")[0])
+		ko.applyBindings(new NewsViewModel(), $("#pageContainer")[0]);
+		popup();
 	});
 </script>

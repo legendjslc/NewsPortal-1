@@ -1,4 +1,6 @@
-﻿using NewsPortal.BL.DTO;
+﻿using System;
+using System.Collections.Generic;
+using NewsPortal.BL.DTO;
 
 namespace NewsPortal.BL.Interfaces
 {
@@ -7,5 +9,6 @@ namespace NewsPortal.BL.Interfaces
         CommentDTO CreateComment(CommentDTO comment);
         CommentDTO EditComment(CommentDTO comment);
         bool DeleteComment(CommentDTO comment);
+        IEnumerable<CommentDTO> GetCommentsForNews(Guid newsId);
     }
 }

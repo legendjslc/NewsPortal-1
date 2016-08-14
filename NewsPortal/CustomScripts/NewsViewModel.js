@@ -41,6 +41,7 @@ var NewsViewModel = function() {
 	}
 
 	self.GetComments = function(newsId){
+		self.Comments.removeAll();
 		$.ajax({
 			type: "GET",
 			dataType: "json",

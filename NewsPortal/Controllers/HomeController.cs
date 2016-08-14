@@ -34,5 +34,14 @@ namespace NewsPortal.Controllers
                 news = news
             }, JsonRequestBehavior.AllowGet);
         }
+
+        public JsonResult GetCommentsForNews(Guid newsId)
+        {
+            var comments = Logic.CommentService.GetCommentsForNews(newsId);
+            return Json(new
+            {
+                comments = comments
+            }, JsonRequestBehavior.AllowGet);
+        }
     }
 }
